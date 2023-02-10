@@ -16,5 +16,8 @@ namespace Natural_website.API.Models
         public DateTime Provide_Date { get; set; }
         public decimal Product_Discount { get; set; }
         public String Comment { get; set; }
+        public String Section { get; set; }
+        public String Picture { get; set; }
+        public String Provider { get; set; }
     }
 }
