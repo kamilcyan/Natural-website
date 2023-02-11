@@ -14,6 +14,9 @@ import { ContactPageComponent } from './components/infos/contact-page/contact-pa
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { EditProductComponent } from './components/products/edit-product/edit-product.component';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { ClientsListComponent } from './components/clients/clients-list/clients-list.component';
+import { EditClientComponent } from './components/clients/edit-client/edit-client.component';
+import { AddClientComponent } from './components/clients/add-client/add-client.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { AddProductComponent } from './components/products/add-product/add-produ
     ContactPageComponent,
     AdminPanelComponent,
     EditProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    ClientsListComponent,
+    EditClientComponent,
+    AddClientComponent
   ],
   imports: [
     BrowserModule,

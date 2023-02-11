@@ -1,1 +1,15 @@
-<p>main-page works!</p>
+<div class="main-content">
+    <form #form="ngForm">
+        <div class="for" *ngFor="let a of articles">
+            <div [ngClass]=a.templateName>
+                <div class="background" [ngStyle]="{'background-image': 'url(' + a.backgroundImage + ')'  }"></div>
+                <div class="Header">{{ a.header }}</div>
+                <div class="main-text">{{ a.mainText }}</div>
+                <img src={{a.mainImage}} />
+                <p>{{ a.paragraph }}</p>
+                <span class="seeMore">Zobacz więcej</span>
+            </div>
+        </div>
+    </form>
+
+</div>

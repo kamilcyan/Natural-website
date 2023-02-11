@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Natural_website.API.DAL;
+using Natural_website.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,10 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<NaturalDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("NarutalConnectionString")));
 
+builder.Services.AddApplication();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 
@@ -21,6 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 

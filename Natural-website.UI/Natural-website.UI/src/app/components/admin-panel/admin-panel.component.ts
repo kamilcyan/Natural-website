@@ -20,6 +20,7 @@ export class AdminPanelComponent implements OnInit {
           this.products = products;
         }
       })
+
   }
 
 }

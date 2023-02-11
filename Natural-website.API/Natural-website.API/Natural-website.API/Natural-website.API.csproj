@@ -18,7 +18,10 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Natural-website.Application\Natural-website.Application.csproj" />
   </ItemGroup>
 
 </Project>

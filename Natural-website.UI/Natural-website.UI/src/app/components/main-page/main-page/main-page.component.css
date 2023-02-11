@@ -1,0 +1,112 @@
+.main-content {
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.main-content form {
+    width: 100%;
+    height: 500px;
+    flex-direction: inherit;
+    flex-wrap: inherit;
+    display: inherit;
+}
+
+.for {
+    flex-direction: inherit;
+    flex-wrap: inherit;
+    display: inherit;
+    margin: 1vh 0vw 1vh 1vw;
+    border: solid black 1px;
+}
+
+.hero .Header {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.hero .main-text {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.hero p {
+    background-color: rgba(255, 255, 255, 0.3);
+    left: 15px;
+    position: absolute;
+    bottom: 8px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.partial .Header {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.partial .main-text {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.partial p {
+    background-color: rgba(255, 255, 255, 0.3);
+    left: 15px;
+    position: absolute;
+    bottom: 8px;
+    text-align: center;
+    font-size: 0.8rem;
+    max-width: 50%;
+    word-wrap: normal;
+}
+
+.partial {
+    background-repeat: no-repeat;
+    width: 30%;
+    width: 48vw;
+    height: 60vh;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero {
+    width: 97vw;
+    height: 80vh;
+    transition: all 3s;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.background {
+    width: inherit;
+    height: inherit;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.hero:hover>.background {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+    transition: all 10s ease-in-out;
+}
+
+.seeMore {
+    border: solid white 1px;
+    border-radius: 3px;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}

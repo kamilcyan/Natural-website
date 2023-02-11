@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Natural_website.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Natural-website.Domain\Natural-website.Domain.csproj" />
+    <ProjectReference Include="..\Natural-website.Infrastructure\Natural-website.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
