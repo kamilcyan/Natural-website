@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Naturalwebsite.API.Migrations
 {
     /// <inheritdoc />
-    public partial class MyFirstMigration : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,7 +37,8 @@ namespace Naturalwebsite.API.Migrations
                 name: "Order",
                 columns: table => new
                 {
-                    OrderId = table.Column<int>(name: "Order_Id", type: "int", nullable: false),
+                    OrderId = table.Column<int>(name: "Order_Id", type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Total = table.Column<int>(type: "int", nullable: false),
                     OrderDate = table.Column<DateTime>(name: "Order_Date", type: "datetime2", nullable: false),
@@ -45,6 +46,7 @@ namespace Naturalwebsite.API.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_Order", x => x.OrderId);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,7 +61,10 @@ namespace Naturalwebsite.API.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProvideDate = table.Column<DateTime>(name: "Provide_Date", type: "datetime2", nullable: false),
                     ProductDiscount = table.Column<decimal>(name: "Product_Discount", type: "decimal(18,2)", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Section = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Picture = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Provider = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

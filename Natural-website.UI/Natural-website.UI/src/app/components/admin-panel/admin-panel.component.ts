@@ -3,19 +3,18 @@ import { Product } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
-  selector: 'app-hand-made',
-  templateUrl: './hand-made.component.html',
-  styleUrls: ['./hand-made.component.css']
+  selector: 'app-admin-panel',
+  templateUrl: './admin-panel.component.html',
+  styleUrls: ['./admin-panel.component.css']
 })
-export class HandMadeComponent implements OnInit {
-
+export class AdminPanelComponent implements OnInit {
+  
   products: Product[] = [];
 
   constructor(private productService: ProductsService) { }
 
-
   ngOnInit(): void {
-    this.productService.getHandmadeProducts()
+    this.productService.getAllProducts()
       .subscribe({
         next: (products) => {
           this.products = products;

@@ -67,20 +67,25 @@ namespace Naturalwebsite.API.Migrations
 
             modelBuilder.Entity("Natural_website.API.Models.Order", b =>
                 {
+                    b.Property<int>("Order_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Order_Id"));
+
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Order_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Order_Id")
-                        .HasColumnType("int");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<int>("Total")
                         .HasColumnType("int");
+
+                    b.HasKey("Order_Id");
 
                     b.ToTable("Order");
                 });
@@ -105,6 +110,9 @@ namespace Naturalwebsite.API.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Picture")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -113,6 +121,12 @@ namespace Naturalwebsite.API.Migrations
 
                     b.Property<DateTime>("Provide_Date")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Provider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Section")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Product_Id");
 

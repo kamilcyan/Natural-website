@@ -1,0 +1,68 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit product</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form #form="ngForm" (ngSubmit)="addProduct()">
+                <div class="mb-3">
+                    <label for="">Id</label>
+                    <input type="text" class="form-control" id="id" readonly="true" name="id"
+                        [(ngModel)]="productRequest.product_Id">
+                </div>
+                <div class="mb-3">
+                    <label for="">Nazwa</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="productRequest.name">
+                </div>
+                <div class="mb-3">
+                    <label for="">Cena</label>
+                    <input type="money" class="form-control" id="price" name="price" [(ngModel)]="productRequest.price">
+                </div>
+                <div class="mb-3">
+                    <label for="">Dostępność</label>
+                    <input type="number" class="form-control" id="avaibility" name="avaibility"
+                        [(ngModel)]="productRequest.avaibility">
+                </div>
+                <div class="mb-3">
+                    <label for="">Opis</label>
+                    <input type="text" class="form-control" id="description" name="description"
+                        [(ngModel)]="productRequest.description">
+                </div>
+
+                <div class="mb-3">
+                    <label for="">Data dodania</label>
+                    <input type="date" class="form-control" id="provide_Date" name="provide_Date"
+                        [(ngModel)]="productRequest.provide_Date">
+                </div>
+                <div class="mb-3">
+                    <label for="">Zniżka</label>
+                    <input type="number" class="form-control" id="product_Discount" name="product_Discount"
+                        [(ngModel)]="productRequest.product_Discount">
+                </div>
+                <div class="mb-3">
+                    <label for="">Komentarz</label>
+                    <input type="text" class="form-control" id="comment" name="comment"
+                        [(ngModel)]="productRequest.comment">
+                </div>
+                <div class="mb-3">
+                    <label for="">Sekcja</label>
+                    <input type="text" class="form-control" id="section" name="section"
+                        [(ngModel)]="productRequest.section">
+                </div>
+                <div class="mb-3">
+                    <label for="">Zdjęcie</label>
+                    <input type="text" class="form-control" id="picture" name="picture"
+                        [(ngModel)]="productRequest.picture">
+                </div>
+                <div class="mb-3">
+                    <label for="">Dodający</label>
+                    <input type="text" class="form-control" id="provider" name="provider"
+                        [(ngModel)]="productRequest.provider">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger" (click)="cancel()">Anuluj</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>

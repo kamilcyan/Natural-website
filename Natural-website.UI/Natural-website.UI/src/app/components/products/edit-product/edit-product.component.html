@@ -1,0 +1,63 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit product</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form #form="ngForm"  (ngSubmit)="updateProduct()">
+                <div class="mb-3">
+                    <label for="">Id</label>
+                    <input type="text" class="form-control" id="id" readonly="true" name="id" [(ngModel)]="productDetails.product_Id">
+                </div>
+                <div class="mb-3">
+                    <label for="">Nazwa</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="productDetails.name">
+                </div>
+                <div class="mb-3">
+                    <label for="">Cena</label>
+                    <input type="money" class="form-control" id="price" name="price"
+                        [(ngModel)]="productDetails.price">
+                </div>
+                <div class="mb-3">
+                    <label for="">Dostępność</label>
+                    <input type="number" class="form-control" id="avaibility" name="avaibility" [(ngModel)]="productDetails.avaibility">
+                </div>
+                <div class="mb-3">
+                    <label for="">Opis</label>
+                    <input type="text" class="form-control" id="description" name="description"
+                        [(ngModel)]="productDetails.description">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="">Data dodania</label>
+                    <input type="date" class="form-control" id="provide_Date" name="provide_Date"
+                        [(ngModel)]="productDetails.provide_Date">
+                </div>
+                <div class="mb-3">
+                    <label for="">Zniżka</label>
+                    <input type="number" class="form-control" id="product_Discount" name="product_Discount" [(ngModel)]="productDetails.product_Discount">
+                </div>
+                <div class="mb-3">
+                    <label for="">Komentarz</label>
+                    <input type="text" class="form-control" id="comment" name="comment"
+                        [(ngModel)]="productDetails.comment">
+                </div>
+                <div class="mb-3">
+                    <label for="">Sekcja</label>
+                    <input type="text" class="form-control" id="section" name="section" [(ngModel)]="productDetails.section">
+                </div>
+                <div class="mb-3">
+                    <label for="">Zdjęcie</label>
+                    <input type="text" class="form-control" id="picture" name="picture" [(ngModel)]="productDetails.picture">
+                </div>
+                <div class="mb-3">
+                    <label for="">Dodający</label>
+                    <input type="text" class="form-control" id="provider" name="provider" [(ngModel)]="productDetails.provider">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteProduct(productDetails.product_Id)">Delete</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
