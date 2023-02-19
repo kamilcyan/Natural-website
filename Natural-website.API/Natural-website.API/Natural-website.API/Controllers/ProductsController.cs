@@ -19,8 +19,22 @@ namespace Natural_website.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
-            var products = await _naturalDbContext.Products.ToListAsync();
-            return Ok(products);
+            try
+            {
+                var products = await _naturalDbContext.Products.ToListAsync();
+                //var products = new Product
+                //{
+                //    Product_Id = 12,
+                //    Name = "toto"
+                //};
+                return Ok(products);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest();
+            }
+            
         }
 
         [HttpGet]

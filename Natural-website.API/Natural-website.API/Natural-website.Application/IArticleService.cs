@@ -50,6 +50,39 @@ namespace Natural_website.Application
                 TemplateName = "partial"
             };
             articles.Add(a1);
+            a1 = new Article()
+            {
+                Id = 1,
+                BackgroundImage = "",
+                Header = "this is my header",
+                MainImage = "https://placekitten.com/g/800/600",
+                MainText = "this is my main text",
+                Paragraph = "alfijsdglihdgk slg hskf hdskfhldsfj",
+                TemplateName = "triplet"
+            };
+            articles.Add(a1);
+            a1 = new Article()
+            {
+                Id = 1,
+                BackgroundImage = "",
+                Header = "this is my header",
+                MainImage = "https://placekitten.com/g/800/600",
+                MainText = "this is my main text",
+                Paragraph = "alfijsdglihdgk slg hskf hdskfhldsfj",
+                TemplateName = "triplet"
+            };
+            articles.Add(a1);
+            a1 = new Article()
+            {
+                Id = 1,
+                BackgroundImage = "",
+                Header = "this is my header",
+                MainImage = "https://placekitten.com/g/800/600",
+                MainText = "this is my main text",
+                Paragraph = "alfijsdglihdgk slg hskf hdskfhldsfj",
+                TemplateName = "triplet"
+            };
+            articles.Add(a1);
 
             a1 = new Article()
             {
