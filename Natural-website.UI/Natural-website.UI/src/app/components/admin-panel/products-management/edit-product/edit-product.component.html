@@ -1,6 +1,13 @@
 <div class="container my-5">
     <h1 class="mb-3">Edit product</h1>
 
+    <nav class="navbar bg-white">
+        <form class="container-fluid justify-content-start bg-white">
+            <!-- <button class="btn btn-outline-success me-2" type="button" routerLink="products">Produkty</button> -->
+            <button class="btn btn-sm m-1 btn-outline-secondary" type="button" (click)="cancel()">Powrót</button>
+        </form>
+    </nav>
+
     <div class="row">
         <div class="col-md-6">
             <form #form="ngForm"  (ngSubmit)="updateProduct()">

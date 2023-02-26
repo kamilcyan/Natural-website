@@ -1,16 +1,13 @@
-﻿using Natural_website.Domain.Models;
+﻿using Natural_website.Application.Interfaces;
+using Natural_website.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Natural_website.Application
+namespace Natural_website.Application.Services
 {
-    public interface IArticleService
-    {
-        public IList<Article> GetFirst(int number);
-    }
     internal class ArticleService : IArticleService
     {
         public IList<Article> GetFirst(int number)
@@ -20,7 +17,7 @@ namespace Natural_website.Application
             var a1 = new Article()
             {
                 Id = 1,
-                BackgroundImage = "https://placekitten.com/g/800/600",
+                BackgroundImage = "assets/bez.jpg",
                 Header = "this is my header",
                 MainImage = "",
                 MainText = "this is my main text",

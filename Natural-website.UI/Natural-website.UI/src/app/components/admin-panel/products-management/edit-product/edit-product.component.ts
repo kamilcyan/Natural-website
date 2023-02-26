@@ -60,4 +60,8 @@ export class EditProductComponent implements OnInit {
         }
       });
   }
+
+  cancel() {
+    this.router.navigate(['admin']);
+  }
 }

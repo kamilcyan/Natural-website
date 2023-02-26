@@ -1,0 +1,54 @@
+
+<div class="container my-5">
+    <h2>Produkty</h2>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" routerLink="products/add">Dodaj produkt</a>
+            </div>
+        </div>
+    </nav> -->
+
+<nav class="navbar bg-white">
+    <form class="container-fluid justify-content-start bg-white">
+            <!-- <button class="btn btn-outline-success me-2" type="button" routerLink="products">Produkty</button> -->
+            <!-- <button class="btn btn-sm m-1 btn-outline-secondary" type="button" (click)="cancelProduct()">Powrót</button> -->
+            <button class="btn btn-sm m-1 btn-outline-secondary" type="button" routerLink="add">Dodaj nowy produkt</button>
+        </form>
+    </nav>
+
+    <form #form="ngForm">
+        <div class="form-group">
+            <table class="table">
+                <thead>
+                    <th>Id</th>
+                    <th>Nazwa</th>
+                    <th>Cena</th>
+                    <th>Dostępność</th>
+                    <th>Opis</th>
+                    <th>Zniżka</th>
+                    <th>Data dodania</th>
+                    <th>Dodający</th>
+                    <th>Sekcja</th>
+                    <th>Komentarz</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of products">
+                        <td>{{ p.product_Id }}</td>
+                        <td>{{ p.name }}</td>
+                        <td>{{ p.price }}</td>
+                        <td>{{ p.avaibility }}</td>
+                        <td>{{ p.description }}</td>
+                        <td>{{ p.product_Discount }}</td>
+                        <td>{{ p.provide_Date }}</td>
+                        <td>{{ p.provider }}</td>
+                        <td>{{ p.section }}</td>
+                        <td>{{ p.comment }}</td>
+                        <td><a [routerLink]="['/products','edit', p.product_Id]">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

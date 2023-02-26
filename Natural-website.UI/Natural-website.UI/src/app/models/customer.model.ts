@@ -1,12 +1,13 @@
 export interface Customer {
-    idCustomer: number;
-    firstName: string;
-    lastName: string;
+    customer_Id: number;
+    first_Name: string;
+    last_Name: string;
     addressLine1: string;
     addressLine2: string;
     addressLine3: string;
     phone: string;
     email: string;
     status: string;
-    customerDiscount: number;
+    customer_Discount: number;
+    comment: string;
 }

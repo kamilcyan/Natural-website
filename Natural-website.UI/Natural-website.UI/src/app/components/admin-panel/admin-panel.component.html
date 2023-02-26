@@ -1,45 +1,28 @@
-<div class="container my-5">
-    <h2>Produkty</h2>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" routerLink="products/add">Dodaj produkt</a>
-            </div>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <a class="navbar-brand" href="#">Produkty</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="products">Produkty</a>
+            <a class="nav-item nav-link" routerLink="contact">Kontakt</a>
+            <a class="nav-item nav-link" routerLink="about-us">O nas</a>
+            <a class="nav-item nav-link" routerLink="admin">Admin</a>
         </div>
-    </nav>
+    </div>
+</nav> -->
 
-    <form #form="ngForm">
-        <div class="form-group">
-            <table class="table">
-                <thead>
-                    <th>Id</th>
-                    <th>Nazwa</th>
-                    <th>Cena</th>
-                    <th>Dostępność</th>
-                    <th>Opis</th>
-                    <th>Zniżka</th>
-                    <th>Data dodania</th>
-                    <th>Dodający</th>
-                    <th>Sekcja</th>
-                    <th>Komentarz</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let p of products">
-                        <td>{{ p.product_Id }}</td>
-                        <td>{{ p.name }}</td>
-                        <td>{{ p.price }}</td>
-                        <td>{{ p.avaibility }}</td>
-                        <td>{{ p.description }}</td>
-                        <td>{{ p.product_Discount }}</td>
-                        <td>{{ p.provide_Date }}</td>
-                        <td>{{ p.provider }}</td>
-                        <td>{{ p.section }}</td>
-                        <td>{{ p.comment }}</td>
-                        <td><a [routerLink]="['/products','edit', p.product_Id]">Edit</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<nav class="navbar bg-white">
+    <form class="container-fluid justify-content-start bg-white">
+        <!-- <button class="btn btn-outline-success me-2" type="button" routerLink="products">Produkty</button> -->
+        <button class="btn btn-sm m-1 btn-outline-secondary" [ngStyle]="{'background-color': buttonProductsClicked ? 'gray' : 'white', 'color': buttonProductsClicked ? 'white':'gray'}" type="button" (click)="showProducts()">Produkty</button>
+        <button class="btn btn-sm m-1 btn-outline-secondary" [ngStyle]="{'background-color': buttonClientsClicked ? 'gray' : 'white', 'color': buttonClientsClicked ? 'white' : 'gray'}" type="button" (click)="showClients()">Klienci</button>
+        <button class="btn btn-sm m-1 btn-outline-secondary" type="button" routerLink="content">Kontent</button>
     </form>
-</div>
+</nav>
+
+<app-manage-products class="product-list-manager" [ngStyle]="{'display': productsVisibility ? 'block' : 'none'}"></app-manage-products>
+
+<app-manage-clients class="client-list-manager" [ngStyle]="{'display': clientsVisibility ? 'block' : 'none'}"></app-manage-clients>

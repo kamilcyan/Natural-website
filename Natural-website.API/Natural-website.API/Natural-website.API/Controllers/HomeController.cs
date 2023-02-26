@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Natural_website.Application;
+using Natural_website.Application.Interfaces;
 
 namespace Natural_website.API.Controllers
 {

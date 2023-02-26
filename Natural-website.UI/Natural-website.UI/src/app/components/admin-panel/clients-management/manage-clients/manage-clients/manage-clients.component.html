@@ -1,0 +1,55 @@
+<div class="container my-5">
+    <h2>Klienci</h2>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" routerLink="products/add">Dodaj produkt</a>
+            </div>
+        </div>
+    </nav> -->
+
+    <nav class="navbar bg-white">
+        <form class="container-fluid justify-content-start bg-white">
+            <!-- <button class="btn btn-outline-success me-2" type="button" routerLink="products">Produkty</button> -->
+            <!-- <button class="btn btn-sm m-1 btn-outline-secondary" type="button" (click)="cancelProduct()">Powrót</button> -->
+            <button class="btn btn-sm m-1 btn-outline-secondary" type="button" routerLink="add">Dodaj nowego klienta</button>
+        </form>
+    </nav>
+
+    <form #form="ngForm">
+        <div class="form-group">
+            <table class="table">
+                <thead>
+                    <th>Id</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Adres 1</th>
+                    <th>Adres 2</th>
+                    <th>Adres 3</th>
+                    <th>Nr tel</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Zniżka</th>
+                    <th>Komentarz</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of customers">
+                        <td>{{ c.customer_Id }}</td>
+                        <td>{{ c.first_Name }}</td>
+                        <td>{{ c.last_Name }}</td>
+                        <td>{{ c.addressLine1 }}</td>
+                        <td>{{ c.addressLine2 }}</td>
+                        <td>{{ c.addressLine3 }}</td>
+                        <td>{{ c.phone }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>{{ c.status }}</td>
+                        <td>{{ c.customer_Discount }}</td>
+                        <td>{{ c.comment }}</td>
+                        <td><a [routerLink]="['/customer','edit', c.customer_Id]">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

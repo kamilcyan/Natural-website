@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Natural_website.API.DAL;
 using Natural_website.API.Models;
+using Natural_website.Application.Interfaces;
 
 namespace Natural_website.API.Controllers
 {
@@ -9,11 +10,11 @@ namespace Natural_website.API.Controllers
     [Route("/[controller]/[action]")]
     public class CustomerController : Controller
     {
-        public NaturalDbContext _naturalDbContext { get; }
+        private readonly ICustomerService customerService;
 
-        public CustomerController()
+        public CustomerController(ICustomerService customerService)
         {
-            //_naturalDbContext = naturalDbContext;
+            this.customerService = customerService;
         }
 
         [HttpGet]
@@ -21,33 +22,36 @@ namespace Natural_website.API.Controllers
         {
             //var customers = await _naturalDbContext.Customers.ToListAsync();
             //return Ok(customers);
-            return Ok();
+            return Ok(await customerService.GetAllCustomers());
         }
 
         [HttpGet]
+        [Route("{id:int}")]
         public async Task<IActionResult> GetCustomer(int id)
         {
             //var customer = await _naturalDbContext.Customers.FindAsync(id);
             //return Ok(customer);
-            return Ok();
+            return Ok(await customerService.GetCustomer(id));
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCustomer(List<string> data)
+        public async Task<IActionResult> AddCustomer([FromBody] Customer customerRequest)
         {
-            return View();
+            return Ok(await customerService.AddCustomer(customerRequest));
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateCustomer(List<string> data)
+        [Route("{id:int}")]
+        public async Task<IActionResult> UpdateCustomer(int id, [FromBody] Customer customerRequest)
         {
-            return View();
+            return Ok(await customerService.UpdateCustomer(id, customerRequest)); ;
         }
 
         [HttpDelete]
+        [Route("{id:int}")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {
-            return View();
+            return Ok(await customerService.DeleteCustomer(id));
         }
     }
 }
